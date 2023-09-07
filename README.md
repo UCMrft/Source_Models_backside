@@ -1,2 +1,43 @@
 # Source_Models_backside
-Pushing can only afflict mental &amp; physical health but have no benefit towards project progression, especially pushing wrong.
+# CCPS参数名称统一：
+## 输入参数
+### 泄漏参数
+1. c_d 释放系数
+2. tem 释放时物质温度 K
+3. p_a 泄漏位置压力 kPa
+4. d 孔洞直径 m
+5. a 面积 m^2
+6. h_b 初始液面距离泄漏液面垂直距离 m
+7. h 泄漏液面距离罐底部距离 m
+### 环境参数
+1. p_0 初始位置压力 kPa
+2. u 风速 m/s
+### 物质参数
+1. m_w 分子质量
+2. rho_l 液态密度 kg/m^3
+3. rho_v 气态密度 kg/m^3
+4. c_s 液体热容 J/(g*K)
+5. delta_h_v 蒸发潜热 J/g
+6. t_b 物质沸点 K
+7. p_sat 当前温度下饱和蒸气压 kPa
+## 输出参数
+1. v 气体或蒸气物质流速 kg/s
+2. l 液体物质流速 kg/s
+3. f_v 闪蒸分数
+4. f_d 液滴蒸发分数
+5. d_d 液滴直径 m
+6. a_p 液池面积 m^2
+7. m_p 液池蒸发速率 kg/s
+8. v_d 表观流速
+9. s 泄漏距离
+# 国标(气体或蒸气通过管道流出)参数
+## 输入参数分类(仅包含未出现过的参数)
+### 泄漏参数
+1. p_1 上游压力
+2. p_2 下游压力
+3. tem_1 上游温度
+4. f 范宁数
+### 环境参数
+1. length 液体流经的距离
+### 物质参数
+gamma 比热容比
