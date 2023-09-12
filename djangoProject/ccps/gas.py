@@ -27,6 +27,7 @@ def gas(request):
             'data2': v10,
             'data3': v60,
             'data4': i,
+            'data5': name,
             'msg': '运算成功'
             }
     elif 60 <= t < 3600:
@@ -35,12 +36,14 @@ def gas(request):
             'data1': v,
             'data2': v10,
             'data3': i,
+            'data4': name,
             'msg': '运算成功'
             }
     else: res = {
             'code': 1,
             'data1': v,
             'data2': i,
+            'data3': name,
             'msg': '运算成功'
             }
     return JsonResponse(res)
