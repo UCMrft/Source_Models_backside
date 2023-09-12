@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def fraction_saturationvapor(request):
     body = json.loads(request.body)
+    name = body.get('name')
     a = body.get('a')
     delta_h_v = body.get('delta_h_v')
     v_fg = body.get('v_fg')
@@ -17,7 +18,8 @@ def fraction_saturationvapor(request):
     q_m = delta_h_v * a / v_fg * (0.98 / t / c_s)**0.5
     res = {
         'code': 1,
-        'data': q_m,
+        'data1': name,
+        'data2': q_m,
         'msg': '运算成功'
     }
     return JsonResponse(res)
