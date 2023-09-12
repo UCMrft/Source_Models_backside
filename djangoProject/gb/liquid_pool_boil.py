@@ -18,7 +18,8 @@ def liquid_pool_boil(request):
     q_m = k_s * (tem_g - tem_l) * a / delta_h_v / (pi * a_s * t)**0.5
     res = {
         'code': 1,
-        'data': q_m,
+        'data1': name,
+        'data2': q_m,
         'msg': '运算成功'
     }
     return JsonResponse(res)
