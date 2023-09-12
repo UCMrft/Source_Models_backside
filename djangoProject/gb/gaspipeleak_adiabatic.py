@@ -10,6 +10,7 @@ sys.setrecursionlimit(100000)
 @csrf_exempt
 def gaspipeleak_adiabatic(request):
     body = json.loads(request.body)
+    name = body.get('name')
     m_w = body.get('m_w')
     f = body.get('f')
     d = body.get('d')
@@ -79,7 +80,8 @@ def gaspipeleak_adiabatic(request):
     v = g * pi * d * d / 4
     res = {
         'code': 1,
-        'data': v,
+        'data1': name,
+        'data2': v,
         'msg': '运算成功'
     }
     return JsonResponse(res)
