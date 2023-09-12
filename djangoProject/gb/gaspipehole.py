@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def gaspipehole(request):
     body = json.loads(request.body)
+     name = body.get('name')
     p_0 = body.get('p_0')
     gamma = body.get('gamma')
     rho = body.get('rho')
@@ -21,7 +22,8 @@ def gaspipehole(request):
     else: q_m = rho * a * c_d * ((0.98 * m_w) / (8.314 * tem) * (2 / (gamma + 1)**((gamma + 1) / (gamma - 1))))**0.5
     res = {
         'code': 1,
-        'data': q_m,
+        'data1': name,
+        'data2': q_m,
         'msg': '运算成功'
         }
     return JsonResponse(res)
