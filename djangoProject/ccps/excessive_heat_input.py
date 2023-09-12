@@ -16,6 +16,7 @@ def excessive_heat_input(request):
     res = {
         'code': 1,
         'data1': v,
+        'data2': name,
         'msg': '运算成功'
     }
     return JsonResponse(res)
