@@ -12,6 +12,7 @@ g = 9.8
 @csrf_exempt
 def liquidtankhole(request):
     body = json.loads(request.body)
+    name = body.get('name')
     a = body.get('a')
     rho = body.get('rho')
     p_0 = body.get('P_0')
@@ -20,7 +21,8 @@ def liquidtankhole(request):
     l = rho * a * c_d * (2 * 0.98 * (p_0 * 1000 - 101325) / rho + 9.8 * h_b)**0.5
     res = {
         'code': 1,
-        'data': l,
+        'data1': name,
+        'data2': l,
         'msg': '运算成功'
     }
     return JsonResponse(res)
