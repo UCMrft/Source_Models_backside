@@ -70,6 +70,7 @@ def liquid_fraction_evaporation(request):
         'data10': m_p,
         'data11': a_p,
         'data12': aero_rate,
+        'data13': name,
         'msg': '运算成功'
     }
     return JsonResponse(res)
