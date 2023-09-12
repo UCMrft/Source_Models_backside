@@ -56,6 +56,7 @@ def liquid_rupture(request):
         'data7': tem_aero,
         'data8': m_p,
         'data9': a_p,
+        'data10': name,
         'msg': '运算成功'
     }
     return JsonResponse(res)
