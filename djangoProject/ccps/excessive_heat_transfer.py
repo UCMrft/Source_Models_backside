@@ -19,6 +19,7 @@ def excessive_heat_transfer(request):
     res = {
         'code': 1,
         'data1': v,
+        'data2': name,
         'msg': '运算成功'
     }
     return JsonResponse(res)
