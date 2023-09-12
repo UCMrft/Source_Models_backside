@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def liquidpipehole(request):
     body = json.loads(request.body)
+    name = body.get('name')
     a = body.get('a')
     rho = body.get('rho')
     p_0 = body.get('p_0')
@@ -15,7 +16,8 @@ def liquidpipehole(request):
     print(l)
     res = {
         'code': 1,
-        'data': l,
+        'data1': name,
+        'data2': l,
         'msg': '运算成功'
     }
     return JsonResponse(res)
